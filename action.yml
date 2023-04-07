@@ -1,0 +1,19 @@
+name: 'Indus GCP Cloud Storage Download'
+description: 'Wait a designated number of milliseconds'
+inputs:
+  credentials:
+    description: 'GCP credentials'
+    required: true
+  bucketName:
+    description: 'Bucket name'
+    required: true
+  destination:
+    description: 'Destination file path'
+    required: false
+    default: ''
+  source:
+    description: 'Source file location'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
