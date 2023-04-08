@@ -14,13 +14,13 @@ async function run()
 
   try
   {
-    let file = await storage.bucket(bucketName).file(source).download(downlaodOptions)
+    await storage.bucket(bucketName).file(source).download(downlaodOptions)
     var fs = require("fs"); // Load the filesystem module
     var stats = fs.statSync(destination)
     var fileSizeInBytes = stats.size
     // Convert the file size to megabytes (optional)
     var fileSizeInMegabytes = fileSizeInBytes / (1024*1024)
-    console.log(fileSizeInMegabytes)
+    console.log(`${fileSizeInMegabytes.toFixed(2)}mb`)
   }
   catch(err)
   {
