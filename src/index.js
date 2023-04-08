@@ -14,7 +14,8 @@ async function run()
 
   try
   {
-    await storage.bucket(bucketName).file(source).download(downlaodOptions)
+    let file = await storage.bucket(bucketName).file(source).download(downlaodOptions)
+    console.log(file[0])
   }
   catch(err)
   {
